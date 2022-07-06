@@ -4,7 +4,7 @@ import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import reducer from './Reducers/ContactReducer';
+import reducer from './Reducers/RootReducer';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

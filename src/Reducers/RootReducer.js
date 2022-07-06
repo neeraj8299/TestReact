@@ -1,21 +1,25 @@
 const initialState = {
-  name: '',
-  email: '',
-  dob: '',
-  gender: '',
+  contactList: [],
+  isLoggedIn: false,
 };
 
 const setContactState = (state, action) => {
+  console.log(action)
   return {
     ...state,
-    ...action.payload,
+    contactList: [...action.payload],
   };
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SetContactState':
+    case "getContactList":
       return setContactState(state, action);
+    case "login":
+      return {
+        ...state,
+        isLoggedIn: action.payload,
+      };
     default:
       return state;
   }
